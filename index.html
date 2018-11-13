@@ -18,55 +18,68 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <form>
+            <form class="needs-validation" novalidate>
                 <fieldset>
                     <legend>Personal Information</legend>
                     <div class="form-row mb-3">
-                        <div class="col-lg-8 col-sm-8 col-xs-12">
+                        <div class="col-lg-8 col-sm-8 col-12">
                             <label for="surname">Surname</label>
                             <input class="form-control" id="surname" type="text" name="surname" required>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your name is required.
+                            </div>
                         </div>
-                        <div class="col-lg-4 col-sm-4 col-xs-12">
+                        <div class="col-lg-4 col-sm-4 col-12">
                             <label for="name">Name</label>
-                            <input class="form-control" id="name" type="text" name="name" required>
+                            <input class="form-control needs-validation" id="name" type="text" name="name" required>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your surname is required.
+                            </div>
                         </div>
                     </div>
                     <div class="form-row mb-3">
-                        <div class="col-lg-12 col-sm-12 col-xs-12 mb-3">
-                            <label for="Username">Username <a href="#" class="text-light" data-toggle="popover"
-                                                              data-placement="right" data-trigger="hover"
-                                                              data-content="use: a-z, 0-9, and symbol ( _ )">
-                                                              <i class="fas fa-info-circle"></i>
-                                                          </a>
+                        <div class="col-lg-12 col-sm-12 col-12 mb-3">
+                            <label for="Username">Username <a href="#"
+                                                              class="text-light"
+                                                              data-toggle="popover"
+                                                              data-placement="right"
+                                                              data-trigger="hover"
+                                                              data-content="Only letters (either case), numbers,
+                                                               and the underscore; no more than 15 characters.">
+                                                                <i class="fas fa-info-circle"></i>
+                                                            </a>
                             </label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 </div>
-                                <input type="text" class="form-control" id="Username" placeholder="Username" required>
+                                <input type="text" class="form-control" id="Username" placeholder="Username" pattern="[A-Za-z0-9_]{1,15}" required>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Your username is required.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset>
                     <div class="form-row mb-3">
-                        <div class="col-lg-2 col-sm-6 col-xs-12 mb-3">
+                        <div class="col-xl-2 col-lg-4 col-sm-6 col-12 mb-3">
                             <div class="mb-2">Gender</div>
-                            <div class="form-check form-check-inline ">
-                                <input type="radio" id="male" name="gender" value="male" class="form-check-input"
-                                       checked>
+                            <div class="form-check-inline">
+                                <input type="radio" id="male" name="gender" value="male" class="form-check-input" checked>
                                 <label class="form-check-label" for="male">Male</label>
                             </div>
-                            <div class="form-check form-check-inline ">
+                            <div class="form-check-inline">
                                 <input type="radio" id="female" name="gender" value="female" class="form-check-input">
                                 <label class="form-check-label" for="female">Female</label>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-sm-6 col-xs-12 mb-3">
+                        <div class="col-xl-5 col-lg-4 col-sm-6 col-12 mb-3">
                             <label for="marital-status">Marital status <a href="#" class="text-light"
                                                                           data-toggle="popover"
-                                                                          data-placement="right" data-trigger="hover"
-                                                                          data-content="your civil status">
+                                                                          data-placement="right"
+                                                                          data-trigger="hover"
+                                                                          data-content="Your civil status">
                                                                           <i class="fas fa-info-circle"></i>
                                                                         </a>
                             </label>
@@ -78,14 +91,15 @@
                                 <option value="4">Widowed</option>
                             </select>
                         </div>
-                        <div class="col-lg-5 col-sm-6 col-xs-12 mb-3">
-                            <label for="country-of-residence">Country of residence <a href="#" class="text-light"
-                                                                                      data-toggle="popover"
-                                                                                      data-placement="right"
-                                                                                      data-trigger="hover"
-                                                                                      data-content="your country of residence is the country in which you are currently living in">
-                                                                                      <i  class="fas fa-info-circle"></i>
-                                                                                    </a>
+                        <div class="col-xl-5 col-lg-4 col-sm-6 col-12 mb-3">
+                            <label for="country-of-residence">Country of residence
+                                <a href="#" class="text-light"
+                                   data-toggle="popover"
+                                   data-placement="right"
+                                   data-trigger="hover"
+                                   data-content="Your country of residence is the country in which you are currently living in">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </label>
                             <select class="custom-select" id="country-of-residence">
                                 <option selected>Open this select menu</option>
@@ -96,15 +110,15 @@
                             </select>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6 col-xs-12 mb-3">
+                        <div class="col-lg-4 col-sm-6 col-12 mb-3">
                             <label for="date-of-birth">Date of birth</label>
                             <input class="form-control" id="date-of-birth" type="date" name="date-of-birth">
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12 mb-3">
+                        <div class="col-lg-4 col-sm-6 col-12 mb-3">
                             <label for="place-of-birth">Place of birth</label>
                             <input class="form-control" id="place-of-birth" type="text" name="place-of-birth">
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12 mb-3">
+                        <div class="col-lg-4 col-sm-6 col-12 mb-3">
                             <label for="nationality">Nationality</label>
                             <input class="form-control" id="nationality" type="text" name="nationality">
                         </div>
@@ -113,54 +127,71 @@
                 <fieldset>
                     <legend>Registration</legend>
                     <div class="form-row mb-3">
-                        <div class="col-lg-4 col-sm-12 col-xs-12 mb-3">
+                        <div class="col-lg-4 col-sm-12 col-12 mb-3">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="email@example.com"
                                    required>
                             <small class="text-muted">Use valid email</small>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your email is required.
+                            </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12 mb-3">
-                            <label for="pswrd">Password <a href="#" class="text-light" data-toggle="popover"
-                                                           data-placement="right" data-trigger="hover"
-                                                           data-content="use: lowercase and uppercase letters (a-z),and numbers (0-9)">
-                                <i class="fas fa-info-circle"></i></a></label>
-                            <input type="password" class="form-control" id="pswrd" required>
-                            <small class="text-muted">Minimum 8 characters</small>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-xs-12 mb-3">
-                            <label for="pswrd-confirm">Confirm password <a href="#" class="text-light"
-                                                                           data-toggle="popover"
-                                                                           data-placement="right" data-trigger="hover"
-                                                                           data-content="repeat password">
-                                                                           <i class="fas fa-info-circle"></i>
-                                                                            </a>
+                        <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                            <label for="password">Password <a href="#" class="text-light"
+                                                              data-toggle="popover"
+                                                              data-placement="right"
+                                                              data-trigger="hover"
+                                                              data-content="Only letters (either case), numbers,
+                                                               from 8 till 20 characters.">
+                                                              <i class="fas fa-info-circle"></i>
+                                                           </a>
                             </label>
-                            <input type="password" class="form-control" id="pswrd-confirm" required>
+                            <input type="password" class="form-control" id="password" pattern="[A-Za-z0-9]{8,20}" required>
+                            <small class="text-muted">Minimum 8 characters</small>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your password is required.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                            <label for="password-confirm">Confirm password <a href="#" class="text-light"
+                                                                              data-toggle="popover"
+                                                                              data-placement="right"
+                                                                              data-trigger="hover"
+                                                                              data-content="Repeat your password">
+                                                                              <i class="fas fa-info-circle"></i>
+                                                                           </a>
+                            </label>
+                            <input type="password" class="form-control" id="password-confirm" required>
                             <small class="text-muted">Repeat password</small>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your confirm password is required.
+                            </div>
                         </div>
                     </div>
-                    <div class="form row mb-3">
-                        <div class="col-lg-6 offset-lg-2 col-sm-6 offset-sm-3 col-xs-12 mb-3">
+                    <div class="form-row mb-3">
+                        <div class="col-lg-6 offset-lg-2 col-sm-6 offset-sm-3 col-12 mb-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="accept-checkbox" value="option1">
-                                <label class="form-check-label" for="accept-checkbox">Remember me <a href="#"
-                                                                                                     class="text-light"
-                                                                                                     data-toggle="popover"
-                                                                                                     data-placement="right"
-                                                                                                     data-trigger="hover"
-                                                                                                     data-content="will remember for 2 weeks">
-                                                                                                    <i class="fas fa-info-circle"></i>
-                                                                                                  </a>
+                                <input class="form-check-input" type="checkbox" id="accept-checkbox" value="option1" required>
+                                <label class="form-check-label text-white-50" for="accept-checkbox">I agree to the Terms
+                                    and Conditions <a href="#"
+                                                      class="text-light"
+                                                      data-toggle="popover"
+                                                      data-placement="right"
+                                                      data-trigger="hover"
+                                                      data-content="By clicking Submit, you agree to our Terms and
+                                                       that you have read our Data Use Policy, including our Cookie Use.">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </a>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
                 <div class="form-row mb-3">
-                    <div class="offset-lg-8 col-lg-2 offset-sm-4 col-sm-4 col-xs-12 mb-3">
+                    <div class="offset-lg-8 col-lg-2 offset-sm-4 col-sm-4 col-12 mb-3">
                         <input class="btn btn-success btn-block" type="submit" value="Submit">
                     </div>
-                    <div class="col-lg-2 col-sm-4 col-xs-12 mb-3">
+                    <div class="col-lg-2 col-sm-4 col-12 mb-3">
                         <input class="btn btn-secondary btn-block" type="reset" value="Reset">
                     </div>
                 </div>
@@ -168,6 +199,7 @@
         </div>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -179,9 +211,37 @@
         crossorigin="anonymous"></script>
 
 <script>
+
     $(function () {
+
         $('[data-toggle="popover"]').popover()
+
     })
+
+    $(function() {
+
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                console.log(form)
+                form.addEventListener('submit', function(event) {
+
+                    if (form.checkValidity() === false) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
 </script>
+
 </body>
 </html>
